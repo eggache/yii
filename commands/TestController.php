@@ -7,6 +7,7 @@
 
 namespace app\commands;
 
+use Yii;
 use app\models\Dealfeedback;
 use yii\console\Controller;
 
@@ -26,10 +27,5 @@ class TestController extends Controller
      */
     public function actionIndex($message = 'hello world')
     {
-        $dealfeedback = Dealfeedback::find()
-            ->where(['id' => 1])
-            ->one();
-        var_dump($dealfeedback);
-
     }
 }

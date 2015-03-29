@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\Feedbackcomment;
 use app\models\Dealfeedback;
 use app\models\DealfeedbackSearch;
 use yii\web\Controller;
@@ -117,5 +118,11 @@ class DealfeedbackController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+    public static function addFeedback($addfeedbackform)
+    {
+        $id = Feedbackcomment::addComment($addfeedbackform);
+        var_dump($id);exit;
     }
 }
