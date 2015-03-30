@@ -7,4 +7,11 @@ use yii\base\Model;
 class PicForm extends Model
 {
     public $file;
+
+    public function rules()
+    {
+        return [
+            [['file'], 'file'],
+        ];
+    }
 }
