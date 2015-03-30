@@ -4,24 +4,22 @@ use yii\widgets\ActiveForm;
 ?>
 
 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
-<span onclick="myFunction()" >upload</span>
+<span onclick="upload()" >upload</span>
+<input type="file" name="PicForm[file]" id="file" accept="image/*" onchange="myFunction()"/>
+<input type="submit" id="submit" />
 <?php ActiveForm::end() ?>
-<img src='/uploads/1.jpg'>
+<img src='../image/1.jpg'>
               </div> 
 <script>
 function myFunction()
 {
-    var x = document.createElement("INPUT");
-    x.setAttribute("type", "file");
-    x.setAttribute("name", "PicForm[file]");
-    x.accept="image/*";
+    x=document.getElementById("submit");
     x.click();
-    x.onchange=upload();
-    alert(x);
 }
 
 function upload()
 {
-    alert(111);
+    var x = document.getElementById("file");
+    x.click();
 }
 </script>

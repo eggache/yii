@@ -14,7 +14,7 @@ class PicfeedbackController extends Controller
             $model->file = UploadedFile::getInstance($model, 'file');
 
             if ($model->file && $model->validate()) {                
-                $model->file->saveAs('uploads/' . $model->file->baseName . '.' . $model->file->extension);
+                $model->file->saveAs('../image/' . $model->file->baseName . '.' . $model->file->extension);
             }
         }
         return $this->render('upload', ['model' => $model]);
