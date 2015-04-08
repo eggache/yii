@@ -114,4 +114,9 @@ class SiteController extends Controller
         }
     }
 
+    public function actionAjax()
+    {
+        echo 'ajax is ok';
+    }
+
 }
